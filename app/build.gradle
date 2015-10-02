@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.0.1"
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
     defaultConfig {
         applicationId "com.erstudio.guper"
         minSdkVersion 18
@@ -22,5 +22,19 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+
+    // https://github.com/koush/AndroidAsync
+    compile 'com.koushikdutta.async:androidasync:2.+'
+    // https://github.com/roboguice/roboguice/wiki
+    compile 'org.roboguice:roboguice:3.+'
+    provided 'org.roboguice:roboblender:3.+'
+    // https://github.com/google/gson
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'joda-time:joda-time:2.8.2'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:cardview-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
 }
