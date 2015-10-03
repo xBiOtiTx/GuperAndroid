@@ -18,6 +18,7 @@ import com.erstudio.guper.adapter.MessageAdapter;
 import com.erstudio.guper.model.Location;
 import com.erstudio.guper.model.Message;
 import com.erstudio.guper.model.WSMessage;
+import com.erstudio.guper.model.WSMessageType;
 import com.erstudio.guper.service.GuperWSService;
 import com.erstudio.guper.service.GuperWSServiceListener;
 import com.erstudio.guper.service.GuperWSServiceStatus;
@@ -75,7 +76,7 @@ public class GuperActivity extends AppCompatActivity {
             mRecyclerView.smoothScrollToPosition(mAdapter.getItemCount() - 1);
 
             Message message = new Message(new Location(0f, 0f), stringMessage);
-            WSMessage wsMessage = new WSMessage("SEND_MESSAGE", message);
+            WSMessage wsMessage = new WSMessage(WSMessageType.SEND_MESSAGE, message);
             guperWSService.send(wsMessage);
         }
     }
